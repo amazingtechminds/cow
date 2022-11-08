@@ -184,4 +184,30 @@ public class CowsInAFieldTests
         // Assert
         Assert.AreEqual((size*size), result);
     }
+    
+    [DataRow(7)]
+    [DataRow(100)]
+    [TestMethod]
+    public void GetNeighboursOfChessCowFieldOfSize(int size)
+    {
+        // Arrange
+        var cows = new List<Cow>();
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++)
+            {
+                if((i+j)%2 == 0)
+                {
+                    cows.Add(new Cow(i, j));
+                }
+            }
+        }
+        CowsInAField cowsInAField = new CowsInAField(cows, 7);
+
+        // Act
+        var result = cowsInAField.GetCowNeighbours();
+
+        // Assert
+        Assert.AreEqual(0, result);
+    }
 }
