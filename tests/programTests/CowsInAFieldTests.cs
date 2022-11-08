@@ -117,4 +117,50 @@ public class CowsInAFieldTests
         // Assert 
         Assert.AreEqual(6, result);
     }
+    
+    [TestMethod]
+    public void GetYNeighboursOfInCowField()
+    {
+        // Arrange
+        var cows = new List<Cow>();
+        cows.Add(new Cow(6, 1));
+        cows.Add(new Cow(1, 2));
+        cows.Add(new Cow(6, 2));
+        cows.Add(new Cow(1, 3));
+        cows.Add(new Cow(5, 6));
+
+        CowsInAField cowsInAField = new CowsInAField(cows, 7);
+
+        // Act 
+        var result = cowsInAField.GetCowNeighbours();
+        
+        // Assert 
+        Assert.AreEqual(4, result);
+    }
+    
+    [TestMethod]
+    public void GetXYNeighboursOfInCowField()
+    {
+        // Arrange
+        var cows = new List<Cow>();
+        cows.Add(new Cow(5, 0));
+        cows.Add(new Cow(6, 0));
+        cows.Add(new Cow(6, 1));
+        cows.Add(new Cow(0, 2));
+        cows.Add(new Cow(1, 2));
+        cows.Add(new Cow(6, 2));
+        cows.Add(new Cow(1, 3));
+        cows.Add(new Cow(2, 5));
+        cows.Add(new Cow(3, 5));
+        cows.Add(new Cow(5, 6));
+
+        CowsInAField cowsInAField = new CowsInAField(cows, 7);
+
+        // Act 
+        var result = cowsInAField.GetCowNeighbours();
+        
+        // Assert 
+        Assert.AreEqual(9, result);
+    }
 }
+
