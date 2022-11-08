@@ -3,7 +3,7 @@ namespace program;
 public class CowsInAField
 {
     public List<Cow> Cows { get; set; }
-    public Dictionary<int, Cow> CowDictionary { get; set; }
+    public Dictionary<int, string> CowDictionary { get; set; }
     public int NumberOfCows => Cows.Count;
     public int SizeOfField { get; set; }
 
@@ -16,10 +16,10 @@ public class CowsInAField
     public CowsInAField(List<Cow> cowList, int sizeOfField)
     {
         Cows = cowList;
-        CowDictionary = new Dictionary<int, Cow>();
+        CowDictionary = new Dictionary<int, string>();
         for(int i=0; i<cowList.Count; i++)
         {
-            CowDictionary.Add(i, cowList[i]);
+            CowDictionary.Add(i, $"{cowList[i].Xcoord},{cowList[i].Ycoord}");
         }
 
         SizeOfField = sizeOfField;
@@ -78,25 +78,25 @@ public class CowsInAField
     
     public bool IsCowNeighbour(int x, int y)
     {
-        if (IsCowAtPosition(new Cow(x + 1, y)))
+        if (IsCowAtPosition($"{x+1},{y}"))
             return true;
-        if (IsCowAtPosition(new Cow(x - 1, y)))
+        if (IsCowAtPosition($"{x-1},{y}"))
             return true;
-        if (IsCowAtPosition(new Cow(x, y + 1)))
+        if (IsCowAtPosition($"{x},{y+1}"))
             return true;
-        if (IsCowAtPosition(new Cow(x, y - 1)))
+        if (IsCowAtPosition($"{x},{y-1}"))
             return true;
         return false;
     }
     
-    public bool IsCowAtPosition(Cow cow)
+    public bool IsCowAtPosition(string cowString)
     {
-        if(CowDictionary.ContainsValue(cow))
+        if(CowDictionary.ContainsValue(cowString))
             return true;
         
         return false;
     }
-
+    
     public int GetCowsInACorner()
     {
         int numberOfCowsInACorner = 0;
