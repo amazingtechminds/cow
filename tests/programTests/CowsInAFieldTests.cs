@@ -184,7 +184,7 @@ public class CowsInAFieldTests
         // Assert
         Assert.AreEqual((size*size), result);
     }
-    
+
     [DataRow(7)]
     [DataRow(100)]
     [TestMethod]
