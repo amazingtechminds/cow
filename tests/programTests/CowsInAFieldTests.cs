@@ -188,7 +188,7 @@ public class CowsInAFieldTests
     [DataRow(7)]
     [DataRow(100)]
     [TestMethod]
-    public void GetNeighboursOfChessCowFieldOfSize(int size)
+    public void GetNeighboursInChessBoardPatternCowFieldOfSize(int size)
     {
         // Arrange
         var cows = new List<Cow>();
