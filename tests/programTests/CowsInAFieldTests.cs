@@ -82,6 +82,22 @@ public class CowsInAFieldTests
     }
     
     [TestMethod]
+    public void IsCowInInField()
+    {
+        // Arrange
+        var cows = new List<Cow>();
+        cows.Add(new Cow(3, 3));
+
+        CowsInAField cowsInAField = new CowsInAField(cows, 7);
+
+        // Act 
+        var result = cowsInAField.IsCowAtPosition("3,3");
+        
+        // Assert 
+        Assert.AreEqual(true, result);
+    }
+    
+    [TestMethod]
     public void GetXNeighboursOfInCowField()
     {
         // Arrange
@@ -89,8 +105,7 @@ public class CowsInAFieldTests
         cows.Add(new Cow(5, 0));
         cows.Add(new Cow(6, 0));
         cows.Add(new Cow(0, 2));
-        cows.Add(new Cow(0, 3));
-        cows.Add(new Cow(0, 4));
+        cows.Add(new Cow(1, 2));
         cows.Add(new Cow(2, 5));
         cows.Add(new Cow(3, 5));
 
