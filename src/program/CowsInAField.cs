@@ -7,12 +7,6 @@ public class CowsInAField
     public int NumberOfCows => Cows.Count;
     public int SizeOfField { get; set; }
 
-    public CowsInAField()
-    {
-        Cows = new List<Cow>() {new Cow(0,0)};
-        SizeOfField = 1;
-    }
-    
     public CowsInAField(List<Cow> cowList, int sizeOfField)
     {
         Cows = cowList;
@@ -25,42 +19,6 @@ public class CowsInAField
         SizeOfField = sizeOfField;
     }
 
-    public void AddCow(Cow cow)
-    {
-        Cows.Add(cow);
-    }
-
-    public List<Tuple<int, int>> GetCowCordinatesList()
-    {
-        List<Tuple<int, int>> cowCoordinates = new List<Tuple<int, int>>();
-        int numberOfCows = GetNumberOfCows();
-        for (int i = 0; i < numberOfCows; i++)
-        {
-            int x = GetXCoordinateForCow(i);
-            int y = GetYCoordinateForCow(i);
-            cowCoordinates.Add(new Tuple<int, int>(x, y));
-        }
-
-        foreach (var item in cowCoordinates)
-            Console.WriteLine("x: " + item.Item1 + " y: " + item.Item2);
-
-        return cowCoordinates;
-    }
-    
-    public Dictionary<int, Cow> GetCowCordinatesDictionary()
-    {
-        Dictionary<int, Cow> cowCoordinates = new Dictionary<int, Cow>();
-        int numberOfCows = GetNumberOfCows();
-        for (int i = 0; i < numberOfCows; i++)
-        {
-            int x = GetXCoordinateForCow(i);
-            int y = GetYCoordinateForCow(i);
-            cowCoordinates.Add(i, new Cow(x, y));
-        }
-
-        return cowCoordinates;
-    }
-    
     public int GetCowNeighbours()
     {
         int numberOfCows = GetNumberOfCows();
