@@ -20,13 +20,12 @@ public class CowsInAFieldTests
         }
         CowsInAField cowsInAField = new CowsInAField(cows, sizeOfField);
 
-        // Act 
+        // Act
         var result = cowsInAField.GetNumberOfCows();
-        
-        // Assert 
+
+        // Assert
         Assert.AreEqual(cowsAddedToList, result);
     }
-
 
     [TestMethod]
     public void GetCorrectNumbersOfCowsInACornerWithOneInEachCorner()
@@ -40,13 +39,13 @@ public class CowsInAFieldTests
 
         CowsInAField cowsInAField = new CowsInAField(cows, 5);
 
-        // Act 
+        // Act
         var result = cowsInAField.GetCowsInACorner();
-        
-        // Assert 
+
+        // Assert
         Assert.AreEqual(4, result);
     }
-    
+
     [TestMethod]
     public void GetCorrectNumbersOfCowsInACornerTwoCowsInACorner()
     {
@@ -59,13 +58,13 @@ public class CowsInAFieldTests
 
         CowsInAField cowsInAField = new CowsInAField(cows, 5);
 
-        // Act 
+        // Act
         var result = cowsInAField.GetCowsInACorner();
-        
-        // Assert 
+
+        // Assert
         Assert.AreEqual(2, result);
     }
-    
+
     [TestMethod]
     public void GetZeroNeighboursOfEmptyField()
     {
@@ -74,13 +73,13 @@ public class CowsInAFieldTests
 
         CowsInAField cowsInAField = new CowsInAField(cows, 7);
 
-        // Act 
+        // Act
         var result = cowsInAField.GetCowNeighbours();
-        
-        // Assert 
+
+        // Assert
         Assert.AreEqual(0, result);
     }
-    
+
     [TestMethod]
     public void IsCowInInField()
     {
@@ -90,13 +89,13 @@ public class CowsInAFieldTests
 
         CowsInAField cowsInAField = new CowsInAField(cows, 7);
 
-        // Act 
+        // Act
         var result = cowsInAField.IsCowAtPosition("3,3");
-        
-        // Assert 
+
+        // Assert
         Assert.AreEqual(true, result);
     }
-    
+
     [TestMethod]
     public void GetXNeighboursInCowField()
     {
@@ -111,13 +110,13 @@ public class CowsInAFieldTests
 
         CowsInAField cowsInAField = new CowsInAField(cows, 7);
 
-        // Act 
+        // Act
         var result = cowsInAField.GetCowNeighbours();
-        
-        // Assert 
+
+        // Assert
         Assert.AreEqual(6, result);
     }
-    
+
     [TestMethod]
     public void GetYNeighboursInCowField()
     {
@@ -131,13 +130,13 @@ public class CowsInAFieldTests
 
         CowsInAField cowsInAField = new CowsInAField(cows, 7);
 
-        // Act 
+        // Act
         var result = cowsInAField.GetCowNeighbours();
-        
-        // Assert 
+
+        // Assert
         Assert.AreEqual(4, result);
     }
-    
+
     [TestMethod]
     public void GetXYNeighbourfInCowField()
     {
@@ -156,13 +155,13 @@ public class CowsInAFieldTests
 
         CowsInAField cowsInAField = new CowsInAField(cows, 7);
 
-        // Act 
+        // Act
         var result = cowsInAField.GetCowNeighbours();
-        
-        // Assert 
+
+        // Assert
         Assert.AreEqual(9, result);
     }
-    
+
     [DataRow(7)]
     [DataRow(100)]
     [TestMethod]
@@ -177,14 +176,12 @@ public class CowsInAFieldTests
                 cows.Add(new Cow(i, j));
             }
         }
-
         CowsInAField cowsInAField = new CowsInAField(cows, 7);
 
-        // Act 
+        // Act
         var result = cowsInAField.GetCowNeighbours();
-        
-        // Assert 
+
+        // Assert
         Assert.AreEqual((size*size), result);
     }
 }
-

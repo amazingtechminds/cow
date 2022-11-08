@@ -33,7 +33,7 @@ public class CowsInAField
 
         return numberOfCowNeighbours;
     }
-    
+
     public bool IsCowNeighbour(int x, int y)
     {
         if (IsCowAtPosition($"{x+1},{y}"))
@@ -46,15 +46,15 @@ public class CowsInAField
             return true;
         return false;
     }
-    
+
     public bool IsCowAtPosition(string cowString)
     {
         if(CowDictionary.ContainsValue(cowString))
             return true;
-        
+
         return false;
     }
-    
+
     public int GetCowsInACorner()
     {
         int numberOfCowsInACorner = 0;
@@ -62,7 +62,7 @@ public class CowsInAField
 
         if (numberOfCows == 1 && SizeOfField == 1)
             return 1;
-        
+
         for (int i = 0; i < numberOfCows; i++)
         {
             int x = GetXCoordinateForCow(i);
@@ -90,7 +90,7 @@ public class CowsInAField
     {
         return NumberOfCows;
     }
-    
+
     public int GetXCoordinateForCow(int i)
     {
         return Cows[i].Xcoord;
@@ -101,4 +101,3 @@ public class CowsInAField
         return Cows[i].Ycoord;
     }
 }
-
