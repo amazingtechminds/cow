@@ -81,7 +81,7 @@ public class CowsInAFieldTests
     }
 
     [TestMethod]
-    public void IsCowInInField()
+    public void IsCowAtPosition()
     {
         // Arrange
         var cows = new List<Cow>();
@@ -176,7 +176,7 @@ public class CowsInAFieldTests
                 cows.Add(new Cow(i, j));
             }
         }
-        CowsInAField cowsInAField = new CowsInAField(cows, 7);
+        CowsInAField cowsInAField = new CowsInAField(cows, size);
 
         // Act
         var result = cowsInAField.GetCowNeighbours();
@@ -202,7 +202,7 @@ public class CowsInAFieldTests
                 }
             }
         }
-        CowsInAField cowsInAField = new CowsInAField(cows, 7);
+        CowsInAField cowsInAField = new CowsInAField(cows, size);
 
         // Act
         var result = cowsInAField.GetCowNeighbours();
